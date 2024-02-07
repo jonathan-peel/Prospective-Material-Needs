@@ -13,7 +13,7 @@ def main():
 
     # Import EcoInvent database as the baseline
     ei_db_name = "ecoinvent_3.9.1_cutoff_ecoSpold02"
-
+    # TIP: the below directory path needs to be adjusted to a downloaded copy of the ecoinvent database on your drive
     ei_db_location = "/Users/jopeel/Library/CloudStorage/OneDrive-ETHZurich/PhD data/Tools/LCA/ecoinvent/ecoinvent 3.9.1_cutoff_ecoSpold02/datasets"
     if ei_db_name not in bw.databases.list:
         add_baseline_databases(ei_db_name, ei_db_location)
