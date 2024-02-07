@@ -74,7 +74,7 @@ def add_baseline_databases(db_name: str, db_location: str):
 
 
 def add_prospective_databases(base_db_name: str, scenarios: list):
-    """Add a prospective database to the brightway project."""
+    """Add a prospective database to the brightway project using Premise."""
 
     scenarios_list = []
     for scenario in scenarios:
@@ -104,10 +104,10 @@ def find_activity(database: SQLiteBackend, name: str, location: str) -> Activity
 
 
 def create_inventory_dataframe(
-    database_name: str, process_name: str, interests=final_metals, cutoff=None
+    database_name: str, process: str, interests=final_metals, cutoff=None
 ):
     """ """
-    lca = bw.LCA({(database_name, process_name): 1})
+    lca = bw.LCA({process: 1})
     lca.lci()
     array = lca.inventory.sum(axis=1)
 
